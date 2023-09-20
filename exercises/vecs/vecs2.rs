@@ -1,3 +1,4 @@
+use std::any::type_name;
 // vecs2.rs
 //
 // A Vec of even numbers is given. Your task is to complete the loop so that
@@ -8,12 +9,19 @@
 // Execute `rustlings hint vecs2` or use the `hint` watch subcommand for a hint.
 
 // I AM NOT DONE
+// a way to test the vector
+fn type_of<T>(_: &T) -> &'static str {
+    type_name::<&T>()
+}
 
 fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     for element in v.iter_mut() {
         // TODO: Fill this up so that each element in the Vec `v` is
         // multiplied by 2.
-        ???
+        println!("{}", type_of(element));
+        *element*=2;
+        
+        // &mut i32 thats why it needs to be dereferenced
     }
 
     // At this point, `v` should be equal to [4, 8, 12, 16, 20].
@@ -24,8 +32,13 @@ fn vec_map(v: &Vec<i32>) -> Vec<i32> {
     v.iter().map(|element| {
         // TODO: Do the same thing as above - but instead of mutating the
         // Vec, you can just return the new number!
-        ???
+        *element * 2
+        // &i32 thats why it needs to be dereferenced
     }).collect()
+}
+fn main(){
+    let a = vec![1,2,3];
+    vec_loop(a)
 }
 
 #[cfg(test)]
