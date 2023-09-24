@@ -8,7 +8,7 @@ use std::any::type_name;
 //
 // Execute `rustlings hint vecs2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 // a way to test the vector
 fn type_of<T>(_: &T) -> &'static str {
     type_name::<&T>()
@@ -38,7 +38,7 @@ fn vec_map(v: &Vec<i32>) -> Vec<i32> {
 }
 fn main(){
     let a = vec![1,2,3];
-    vec_loop(a)
+    vec_loop(a);
 }
 
 #[cfg(test)]
