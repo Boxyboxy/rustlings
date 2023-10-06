@@ -1,7 +1,7 @@
 // enums1.rs
 //
 // No hints this time! ;)
-
+// hello
 
 
 #[derive(Debug)]
