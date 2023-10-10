@@ -18,7 +18,6 @@
 //
 // Execute `rustlings hint box1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
 use crate::List::Nil;
 use crate::List::Cons;

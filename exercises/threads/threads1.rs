@@ -8,7 +8,6 @@
 // Execute `rustlings hint threads1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 use std::thread;
 use std::time::{Duration, Instant};
@@ -27,7 +26,12 @@ fn main() {
     let mut results: Vec<u128> = vec![];
     for handle in handles {
         // TODO: a struct is returned from thread::spawn, can you use it?
+        results.push(handle.join().unwrap());
     }
+
+    // In the context of threading, the .join() method is used to halt the execution of the current thread until the thread it is called on has finished executing. This is useful when you need to ensure that a particular thread has completed its task before proceeding.
+
+    // In this example, the main thread will wait for the spawned thread to finish before it exits doc.rust-lang.org.
 
     if results.len() != 10 {
         panic!("Oh no! All the spawned threads did not finish!");
